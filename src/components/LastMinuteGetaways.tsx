@@ -17,7 +17,7 @@ const lastMinuteDeals = [
     description: "Modern city-state with incredible cuisine",
     urgency: "3 spots left",
     image:
-      "https://images.unsplash.com/photo-1531590878845-12627191e687?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
+      "https://github.com/CSSamarasinghe/Tripmate_web/blob/main/src/assets/Singapore.jpeg?raw=true",
   },
   {
     id: 2,
@@ -32,7 +32,7 @@ const lastMinuteDeals = [
     description: "Luxury desert metropolis",
     urgency: "5 spots left",
     image:
-      "https://images.unsplash.com/photo-1518684079-3c830dcef090?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
+      "https://github.com/CSSamarasinghe/Tripmate_web/blob/main/src/assets/Dubai.jpg?raw=true",
   },
   {
     id: 3,
@@ -62,7 +62,7 @@ const lastMinuteDeals = [
     description: "Tropical island paradise",
     urgency: "1 spot left",
     image:
-      "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
+      "https://github.com/CSSamarasinghe/Tripmate_web/blob/main/src/assets/Mauri.png?raw=true",
   },
   {
     id: 5,
@@ -77,7 +77,7 @@ const lastMinuteDeals = [
     description: "Land of smiles and temples",
     urgency: "4 spots left",
     image:
-      "https://images.unsplash.com/photo-1528181304800-259b08848526?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
+      "https://github.com/CSSamarasinghe/Tripmate_web/blob/main/src/assets/Thailand.png?raw=true",
   },
 ];
 

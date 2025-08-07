@@ -2,12 +2,19 @@ import { useState } from "react";
 import { Heart, Star, Clock, MapPin, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+
 const faroeImage =
   "https://raw.githubusercontent.com/CSSamarasinghe/Tripmate_web/main/src/assets/Faroe.jpg";
 const madagascarImage =
   "https://raw.githubusercontent.com/CSSamarasinghe/Tripmate_web/main/src/assets/Madagascar.jpg";
 const moroccoImage =
   "https://github.com/CSSamarasinghe/Tripmate_web/blob/main/src/assets/Morocco.jpg?raw=true";
+const icelandImage =
+  "https://github.com/CSSamarasinghe/Tripmate_web/blob/main/src/assets/Iceland.jpg?raw=true";
+const vietnamImage =
+  "https://github.com/CSSamarasinghe/Tripmate_web/blob/main/src/assets/Vietnam.jpg?raw=true";
+const peruImage =
+  "https://github.com/CSSamarasinghe/Tripmate_web/blob/main/src/assets/Peru.jpg?raw=true";
 
 const pickedDestinations = [
   {
@@ -21,30 +28,72 @@ const pickedDestinations = [
     highlights: ["Remote", "Nature", "Nordic"],
     description: "Dramatic landscapes and untouched Nordic beauty",
     personalizedReason: "Perfect for your love of remote destinations",
+    region: "Europe",
   },
   {
     id: 2,
     name: "Morocco",
     image: moroccoImage,
-    price: "From $999",
+    price: "From LKR 374,999",
     duration: "8 Days",
     rating: 4.7,
     reviews: 789,
     highlights: ["Culture", "Desert", "Architecture"],
     description: "Imperial cities and Sahara desert adventure",
     personalizedReason: "Matches your interest in cultural experiences",
+    region: "Africa",
   },
   {
     id: 3,
     name: "Madagascar",
     image: madagascarImage,
-    price: "From $1,799",
+    price: "From LKR 321,799",
     duration: "12 Days",
     rating: 4.8,
     reviews: 234,
     highlights: ["Wildlife", "Unique", "Adventure"],
     description: "World's 4th largest island with unique biodiversity",
     personalizedReason: "Great for wildlife and adventure lovers",
+    region: "Africa",
+  },
+  {
+    id: 4,
+    name: "Iceland",
+    image: icelandImage,
+    price: "From LKR 541,599",
+    duration: "7 Days",
+    rating: 4.9,
+    reviews: 876,
+    highlights: ["Northern Lights", "Waterfalls", "Geothermal"],
+    description: "Land of fire and ice with breathtaking natural wonders",
+    personalizedReason: "Ideal for your passion for unique landscapes",
+    region: "Europe",
+  },
+  {
+    id: 5,
+    name: "Vietnam",
+    image: vietnamImage,
+    price: "From LKR 435,899",
+    duration: "10 Days",
+    rating: 4.6,
+    reviews: 543,
+    highlights: ["Food", "History", "Beaches"],
+    description: "Vibrant culture with stunning coastline and rich history",
+    personalizedReason: "Matches your love for authentic cuisine",
+    region: "Asia",
+  },
+  {
+    id: 6,
+    name: "Peru",
+    image: peruImage,
+    price: "From LKR 341,299",
+    duration: "9 Days",
+    rating: 4.7,
+    reviews: 432,
+    highlights: ["Machu Picchu", "Andes", "Culture"],
+    description: "Ancient ruins and diverse landscapes from coast to jungle",
+    personalizedReason: "Perfect for your interest in ancient civilizations",
+    region: "South America",
   },
 ];
 
@@ -155,7 +204,7 @@ const DestinationsPickedForYou = () => {
                 </div>
                 <div className="flex items-center gap-1">
                   <MapPin className="h-4 w-4" />
-                  Europe
+                  {destination.region}
                 </div>
               </div>
 
@@ -165,11 +214,7 @@ const DestinationsPickedForYou = () => {
                 </div>
                 <Button
                   size="sm"
-                  className={`transition-all duration-300 ${
-                    hoveredCard === destination.id
-                      ? "bg-primary hover:bg-primary-hover"
-                      : "bg-muted hover:bg-muted/80"
-                  }`}
+                  className="bg-primary text-background hover:bg-white/90 hover:text-background transition-all duration-300"
                 >
                   View Details
                 </Button>
