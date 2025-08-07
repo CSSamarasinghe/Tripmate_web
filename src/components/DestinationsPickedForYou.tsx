@@ -21,7 +21,7 @@ const pickedDestinations = [
     id: 1,
     name: "Faroe Islands",
     image: faroeImage,
-    price: "From $1,399",
+    price: "From LKR 431,399",
     duration: "6 Days",
     rating: 4.9,
     reviews: 312,
@@ -104,7 +104,6 @@ const DestinationsPickedForYou = () => {
     <section className="py-16 px-4 max-w-7xl mx-auto">
       <div className="text-center mb-12">
         <div className="flex items-center justify-center gap-2 mb-4">
-          <Sparkles className="h-6 w-6 text-accent" />
           <h2 className="text-3xl md:text-4xl font-bold">
             Destinations Picked For You
           </h2>

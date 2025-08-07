@@ -2,19 +2,26 @@ import { useState } from "react";
 import { Heart, Star, Clock, MapPin, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+
 const estoniaImage =
   "https://raw.githubusercontent.com/CSSamarasinghe/Tripmate_web/main/src/assets/estonia-destination.jpg";
 const faroeImage =
   "https://raw.githubusercontent.com/CSSamarasinghe/Tripmate_web/main/src/assets/Faroe.jpg";
 const madagascarImage =
   "https://raw.githubusercontent.com/CSSamarasinghe/Tripmate_web/main/src/assets/Madagascar.jpg";
+const switzerlandImage =
+  "https://github.com/CSSamarasinghe/Tripmate_web/blob/main/src/assets/Swiss.png?raw=true";
+const bhutanImage =
+  "https://github.com/CSSamarasinghe/Tripmate_web/blob/main/src/assets/Bhutan.jpg?raw=true";
+const sloveniaImage =
+  "https://github.com/CSSamarasinghe/Tripmate_web/blob/main/src/assets/Estonia.jpg?raw=true";
 
 const underratedDestinations = [
   {
     id: 1,
     name: "Tallinn, Estonia",
     image: estoniaImage,
-    price: "From $699",
+    price: "From LKR 300,699",
     duration: "4 Days",
     rating: 4.7,
     reviews: 198,
@@ -22,12 +29,13 @@ const underratedDestinations = [
     description: "Medieval charm meets digital innovation",
     trendScore: "+200% interest",
     savingsBadge: "40% less than similar destinations",
+    region: "Europe",
   },
   {
     id: 2,
     name: "Faroe Islands",
     image: faroeImage,
-    price: "From $1,299",
+    price: "From LKR 431,299",
     duration: "5 Days",
     rating: 4.9,
     reviews: 156,
@@ -35,12 +43,13 @@ const underratedDestinations = [
     description: "Untouched Nordic wilderness",
     trendScore: "+150% interest",
     savingsBadge: "Hidden gem pricing",
+    region: "Europe",
   },
   {
     id: 3,
     name: "Madagascar",
     image: madagascarImage,
-    price: "From $1,599",
+    price: "From LKR 425,599",
     duration: "9 Days",
     rating: 4.8,
     reviews: 123,
@@ -48,6 +57,49 @@ const underratedDestinations = [
     description: "8th continent with unique biodiversity",
     trendScore: "+180% interest",
     savingsBadge: "Exclusive wildlife access",
+    region: "Africa",
+  },
+  {
+    id: 4,
+    name: "Swiss Alps, Switzerland",
+    image: switzerlandImage,
+    price: "From LKR 543,499",
+    duration: "5 Days",
+    rating: 4.9,
+    reviews: 287,
+    highlights: ["Mountains", "Lakes", "Charming Villages"],
+    description: "Breathtaking alpine scenery beyond the tourist hotspots",
+    trendScore: "+220% interest",
+    savingsBadge: "30% off-season deals",
+    region: "Europe",
+  },
+  {
+    id: 5,
+    name: "Bhutan",
+    image: bhutanImage,
+    price: "From LKR 342,899",
+    duration: "7 Days",
+    rating: 4.8,
+    reviews: 145,
+    highlights: ["Buddhism", "Himalayas", "Culture"],
+    description: "Last Shangri-La with untouched Himalayan culture",
+    trendScore: "+250% interest",
+    savingsBadge: "Exclusive cultural access",
+    region: "Asia",
+  },
+  {
+    id: 6,
+    name: "Slovenia",
+    image: sloveniaImage,
+    price: "From LKR 230,899",
+    duration: "6 Days",
+    rating: 4.7,
+    reviews: 176,
+    highlights: ["Castles", "Caves", "Alpine Lakes"],
+    description: "Europe's best kept secret with fairytale landscapes",
+    trendScore: "+190% interest",
+    savingsBadge: "50% less crowded than neighbors",
+    region: "Europe",
   },
 ];
 
@@ -158,7 +210,7 @@ const UnderratedDestinations = () => {
                     {destination.trendScore}
                   </span>
                 </div>
-                <div className="text-xs text-primary font-medium bg-primary/10 p-2 rounded-lg">
+                <div className="text-xs text-accent font-medium bg-accent/10 p-2 rounded-lg">
                   💰 {destination.savingsBadge}
                 </div>
               </div>
@@ -170,7 +222,7 @@ const UnderratedDestinations = () => {
                 </div>
                 <div className="flex items-center gap-1">
                   <MapPin className="h-4 w-4" />
-                  Hidden Gem
+                  {destination.region}
                 </div>
               </div>
 
@@ -180,11 +232,7 @@ const UnderratedDestinations = () => {
                 </div>
                 <Button
                   size="sm"
-                  className={`transition-all duration-300 ${
-                    hoveredCard === destination.id
-                      ? "bg-primary hover:bg-primary-hover"
-                      : "bg-muted hover:bg-muted/80"
-                  }`}
+                  className="bg-primary text-background  hover:bg-white/90 hover:text-foreground transition-all duration-300"
                 >
                   Discover
                 </Button>
