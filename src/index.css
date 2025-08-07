@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Travel Platform Design System - Ocean & Sunset Theme 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
     /* Base Colors */

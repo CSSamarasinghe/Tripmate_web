@@ -2,12 +2,18 @@ import { useState } from "react";
 import { Heart, Star, Clock, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import baliImage from "@/assets/bali-destination.jpg";
-import maldivesImage from "@/assets/maldives-destination.jpg";
-import japanImage from "@/assets/japan-destination.jpg";
-import santoriniImage from "@/assets/santorini-destination.jpg";
-import pragueImage from "@/assets/prague-destination.jpg";
-import patagoniaImage from "@/assets/patagonia-destination.jpg";
+const baliImage =
+  "https://raw.githubusercontent.com/CSSamarasinghe/Tripmate_web/main/src/assets/Bali.jpg";
+const maldivesImage =
+  "https://raw.githubusercontent.com/CSSamarasinghe/Tripmate_web/main/src/assets/Maldives.jpg";
+const japanImage =
+  "https://raw.githubusercontent.com/CSSamarasinghe/Tripmate_web/main/src/assets/Japan.jpg";
+const santoriniImage =
+  "https://raw.githubusercontent.com/CSSamarasinghe/Tripmate_web/main/src/assets/Santorini.jpg";
+const pragueImage =
+  "https://raw.githubusercontent.com/CSSamarasinghe/Tripmate_web/main/src/assets/Prague.jpg";
+const patagoniaImage =
+  "https://raw.githubusercontent.com/CSSamarasinghe/Tripmate_web/main/src/assets/Argentina.jpg";
 
 const destinations = [
   {

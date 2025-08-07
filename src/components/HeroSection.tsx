@@ -1,11 +1,71 @@
 import { Search, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useState, useEffect, useRef } from "react";
 
 const HeroSection = () => {
+  const [destinationsCount, setDestinationsCount] = useState(0);
+  const [travelersCount, setTravelersCount] = useState(0);
+  const [ratingCount, setRatingCount] = useState(0);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          startCountAnimations();
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const startCountAnimations = () => {
+    const duration = 2000; // Animation duration in milliseconds
+    const startTime = Date.now();
+
+    const easeOutQuad = (t: number) => t * (2 - t);
+
+    const animateCount = (
+      targetValue: number,
+      setValue: React.Dispatch<React.SetStateAction<number>>
+    ) => {
+      const updateCount = () => {
+        const now = Date.now();
+        const progress = easeOutQuad(Math.min((now - startTime) / duration, 1));
+        const currentValue = Math.floor(progress * targetValue);
+        setValue(currentValue);
+
+        if (progress < 1) {
+          requestAnimationFrame(updateCount);
+        } else {
+          setValue(targetValue); // Ensure we end exactly at the target value
+        }
+      };
+
+      requestAnimationFrame(updateCount);
+    };
+
+    animateCount(150, setDestinationsCount);
+    animateCount(50000, setTravelersCount);
+    animateCount(4.9, setRatingCount);
+  };
+
+  // Format number with commas for travelers count
+  const formattedTravelersCount = travelersCount.toLocaleString();
+
   return (
-    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
-      {/* Video Background */}
+    <section
+      ref={sectionRef}
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
       <div className="absolute inset-0 w-full h-full">
         <video
           autoPlay
@@ -15,7 +75,7 @@ const HeroSection = () => {
           className="w-full h-full object-cover"
         >
           <source
-            src="https://player.vimeo.com/external/370467925.sd.mp4?s=1b95d7f923ab4ad5c6f4a7b6c5c7b9a0d2e4f6a7&profile_id=165"
+            src="src\assets\2547258-uhd_3840_2160_30fps.mp4"
             type="video/mp4"
           />
         </video>
@@ -60,18 +120,20 @@ const HeroSection = () => {
         <div className="grid grid-cols-3 gap-8 mt-12 max-w-md mx-auto">
           <div className="text-center">
             <div className="text-2xl md:text-3xl font-bold text-white">
-              150+
+              {destinationsCount}+
             </div>
             <div className="text-white/80 text-sm">Destinations</div>
           </div>
           <div className="text-center">
             <div className="text-2xl md:text-3xl font-bold text-white">
-              50K+
+              {formattedTravelersCount}+
             </div>
             <div className="text-white/80 text-sm">Happy Travelers</div>
           </div>
           <div className="text-center">
-            <div className="text-2xl md:text-3xl font-bold text-white">4.9</div>
+            <div className="text-2xl md:text-3xl font-bold text-white">
+              {ratingCount.toFixed(ratingCount % 1 === 0 ? 0 : 1)}
+            </div>
             <div className="text-white/80 text-sm">Rating</div>
           </div>
         </div>
