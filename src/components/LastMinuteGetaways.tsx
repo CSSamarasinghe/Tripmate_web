@@ -64,6 +64,21 @@ const lastMinuteDeals = [
     image:
       "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
   },
+  {
+    id: 5,
+    destination: "Thailand",
+    country: "Thailand",
+    price: "$749",
+    originalPrice: "$1,099",
+    discount: "32% OFF",
+    duration: "5 Days",
+    departure: "Next Monday",
+    highlights: ["No Visa", "Beaches", "Culture"],
+    description: "Land of smiles and temples",
+    urgency: "4 spots left",
+    image:
+      "https://images.unsplash.com/photo-1528181304800-259b08848526?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
+  },
 ];
 
 const LastMinuteGetaways = () => {
@@ -82,13 +97,13 @@ const LastMinuteGetaways = () => {
         </p>
       </div>
 
-      {/* Bento Grid Layout */}
+      {/* Bento Grid Layout - Updated for 5 cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {/* Large Featured Deal */}
+        {/* Large Featured Deal - Now Thailand */}
         <Card className="md:col-span-2 lg:row-span-2 relative overflow-hidden group cursor-pointer hover:shadow-[var(--shadow-large)] transition-all duration-300 h-full min-h-[500px]">
           <div
             className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-            style={{ backgroundImage: `url(${lastMinuteDeals[0].image})` }}
+            style={{ backgroundImage: `url(${lastMinuteDeals[4].image})` }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
           <CardContent className="p-8 relative z-10 h-full flex flex-col justify-between">
@@ -107,14 +122,14 @@ const LastMinuteGetaways = () => {
               </div>
 
               <h3 className="text-3xl md:text-4xl font-bold mb-2 text-white">
-                {lastMinuteDeals[0].destination}
+                {lastMinuteDeals[4].destination}
               </h3>
               <p className="text-lg text-white/80 mb-4">
-                {lastMinuteDeals[0].description}
+                {lastMinuteDeals[4].description}
               </p>
 
               <div className="flex flex-wrap gap-2 mb-6">
-                {lastMinuteDeals[0].highlights.map((highlight) => (
+                {lastMinuteDeals[4].highlights.map((highlight) => (
                   <Badge
                     key={highlight}
                     variant="secondary"
@@ -130,11 +145,11 @@ const LastMinuteGetaways = () => {
               <div className="flex items-center gap-4 text-sm text-white/80">
                 <div className="flex items-center gap-1">
                   <Clock className="h-4 w-4" />
-                  {lastMinuteDeals[0].duration}
+                  {lastMinuteDeals[4].duration}
                 </div>
                 <div className="flex items-center gap-1">
                   <Plane className="h-4 w-4" />
-                  {lastMinuteDeals[0].departure}
+                  {lastMinuteDeals[4].departure}
                 </div>
               </div>
 
@@ -142,14 +157,14 @@ const LastMinuteGetaways = () => {
                 <div>
                   <div className="flex items-center gap-2">
                     <span className="text-3xl font-bold text-white">
-                      {lastMinuteDeals[0].price}
+                      {lastMinuteDeals[4].price}
                     </span>
                     <Badge className="bg-success text-white">
-                      {lastMinuteDeals[0].discount}
+                      {lastMinuteDeals[4].discount}
                     </Badge>
                   </div>
                   <span className="text-sm line-through text-white/60">
-                    {lastMinuteDeals[0].originalPrice}
+                    {lastMinuteDeals[4].originalPrice}
                   </span>
                 </div>
                 <Button className="bg-accent hover:bg-accent-hover">
@@ -158,14 +173,14 @@ const LastMinuteGetaways = () => {
               </div>
 
               <div className="text-xs text-warning font-medium">
-                ⚡ {lastMinuteDeals[0].urgency}
+                ⚡ {lastMinuteDeals[4].urgency}
               </div>
             </div>
           </CardContent>
         </Card>
 
-        {/* Smaller Deal Cards */}
-        {lastMinuteDeals.slice(1).map((deal) => (
+        {/* Smaller Deal Cards - Original 4 deals */}
+        {lastMinuteDeals.slice(0, 4).map((deal) => (
           <Card
             key={deal.id}
             className="relative overflow-hidden group cursor-pointer hover:shadow-[var(--shadow-large)] transition-all duration-300 h-full min-h-[300px]"
