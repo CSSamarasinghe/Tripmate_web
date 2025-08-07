@@ -2,9 +2,12 @@ import { useState } from "react";
 import { Heart, Star, Clock, MapPin, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import faroeImage from "@/assets/faroe-destination.jpg";
-import moroccoImage from "@/assets/morocco-destination.jpg";
-import madagascarImage from "@/assets/madagascar-destination.jpg";
+const faroeImage =
+  "https://raw.githubusercontent.com/CSSamarasinghe/Tripmate_web/main/src/assets/Faroe.jpg";
+const madagascarImage =
+  "https://raw.githubusercontent.com/CSSamarasinghe/Tripmate_web/main/src/assets/Madagascar.jpg";
+const moroccoImage =
+  "https://github.com/CSSamarasinghe/Tripmate_web/blob/main/src/assets/Morocco.jpg?raw=true";
 
 const pickedDestinations = [
   {

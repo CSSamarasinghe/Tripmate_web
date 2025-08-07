@@ -2,9 +2,12 @@ import { useState } from "react";
 import { Heart, Star, Clock, MapPin, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import estoniaImage from "../assets/estonia-destination.jpg";
-import faroeImage from "../assets/faroe-destination.jpg";
-import madagascarImage from "../assets/madagascar-destination.jpg";
+const estoniaImage =
+  "https://raw.githubusercontent.com/CSSamarasinghe/Tripmate_web/main/src/assets/estonia-destination.jpg";
+const faroeImage =
+  "https://raw.githubusercontent.com/CSSamarasinghe/Tripmate_web/main/src/assets/Faroe.jpg";
+const madagascarImage =
+  "https://raw.githubusercontent.com/CSSamarasinghe/Tripmate_web/main/src/assets/Madagascar.jpg";
 
 const underratedDestinations = [
   {
