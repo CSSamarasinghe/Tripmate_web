@@ -58,7 +58,6 @@ const UnderratedDestinations = () => {
     <section className="py-16 px-4 max-w-7xl mx-auto">
       <div className="text-center mb-12">
         <div className="flex items-center justify-center gap-2 mb-4">
-          <TrendingUp className="h-6 w-6 text-success" />
           <h2 className="text-3xl md:text-4xl font-bold">
             Underrated Destinations
           </h2>
