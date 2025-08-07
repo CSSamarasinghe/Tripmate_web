@@ -10,11 +10,11 @@ const madagascarImage =
 const moroccoImage =
   "https://github.com/CSSamarasinghe/Tripmate_web/blob/main/src/assets/Morocco.jpg?raw=true";
 const icelandImage =
-  "https://github.com/CSSamarasinghe/Tripmate_web/blob/main/src/assets/Iceland.jpg?raw=true";
+  "https://github.com/CSSamarasinghe/Tripmate_web/blob/main/src/assets/Iceland.png?raw=true";
 const vietnamImage =
   "https://github.com/CSSamarasinghe/Tripmate_web/blob/main/src/assets/Vietnam.jpg?raw=true";
 const peruImage =
-  "https://github.com/CSSamarasinghe/Tripmate_web/blob/main/src/assets/Peru.jpg?raw=true";
+  "https://github.com/CSSamarasinghe/Tripmate_web/blob/main/src/assets/Peru.png?raw=true";
 
 const pickedDestinations = [
   {
