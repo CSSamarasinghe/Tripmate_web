@@ -10,6 +10,117 @@ import TrustElements from "@/components/TrustElements";
 import StickyFooter from "@/components/StickyFooter";
 
 const Index = () => {
+  const itineraries = [
+    {
+      id: 1,
+      title: "Bali Cultural Explorer",
+      price: "$899",
+      duration: "7 days",
+      description: "Explore temples, rice terraces, and local culture",
+      tags: [
+        { label: "Culture", color: "primary" },
+        { label: "Adventure", color: "accent" },
+      ],
+      match: "Perfect match for your preferences",
+    },
+    {
+      id: 2,
+      title: "Japan Heritage Journey",
+      price: "$1,099",
+      duration: "6 days",
+      description: "Discover ancient temples and modern cities",
+      tags: [
+        { label: "Culture", color: "primary" },
+        { label: "History", color: "success" },
+      ],
+      match: "95% match for your interests",
+    },
+    {
+      id: 3,
+      title: "Greek Island Hopper",
+      price: "$1,299",
+      duration: "8 days",
+      description: "Santorini, Mykonos, and Crete island adventure",
+      tags: [
+        { label: "Beach", color: "accent" },
+        { label: "Romance", color: "primary" },
+      ],
+      match: "90% match for your preferences",
+    },
+    {
+      id: 4,
+      title: "Italian Food & Wine Tour",
+      price: "$1,499",
+      duration: "9 days",
+      description: "Tuscany and Amalfi Coast culinary experience",
+      tags: [
+        { label: "Food", color: "success" },
+        { label: "Luxury", color: "accent" },
+      ],
+      match: "88% match for your interests",
+    },
+    {
+      id: 5,
+      title: "Costa Rica Eco Adventure",
+      price: "$1,199",
+      duration: "10 days",
+      description: "Rainforests, volcanoes, and wildlife encounters",
+      tags: [
+        { label: "Adventure", color: "accent" },
+        { label: "Nature", color: "success" },
+      ],
+      match: "92% match for your preferences",
+    },
+    {
+      id: 6,
+      title: "Moroccan Desert Trek",
+      price: "$999",
+      duration: "7 days",
+      description: "From Marrakech to Sahara desert camps",
+      tags: [
+        { label: "Adventure", color: "accent" },
+        { label: "Cultural", color: "primary" },
+      ],
+      match: "85% match for your interests",
+    },
+    {
+      id: 7,
+      title: "Swiss Alpine Explorer",
+      price: "$1,799",
+      duration: "6 days",
+      description: "Scenic train journeys and mountain retreats",
+      tags: [
+        { label: "Mountains", color: "success" },
+        { label: "Luxury", color: "accent" },
+      ],
+      match: "91% match for your preferences",
+    },
+    {
+      id: 8,
+      title: "Vietnam Highlights Tour",
+      price: "$1,099",
+      duration: "12 days",
+      description: "From Hanoi to Ho Chi Minh City",
+      tags: [
+        { label: "Culture", color: "primary" },
+        { label: "Food", color: "success" },
+      ],
+      match: "89% match for your interests",
+    },
+    {
+      id: 6,
+      title: "Moroccan Desert Trek",
+      price: "$999",
+      duration: "7 days",
+      description: "From Marrakech to Sahara desert camps",
+      tags: [
+        { label: "Adventure", color: "accent" },
+        { label: "Cultural", color: "primary" },
+      ],
+      match: "85% match for your interests",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
@@ -61,53 +172,41 @@ const Index = () => {
                     Recommended Itineraries
                   </h3>
                   <div className="text-sm text-muted-foreground">
-                    Found 24 perfect matches
+                    Found {itineraries.length + 1} perfect matches
                   </div>
                 </div>
 
-                {/* Sample itinerary preview cards */}
+                {/* Itinerary cards */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="destination-card p-4">
-                    <div className="flex items-center justify-between mb-3">
-                      <h4 className="font-semibold">Bali Cultural Explorer</h4>
-                      <div className="text-primary font-bold">$899</div>
-                    </div>
-                    <p className="text-sm text-muted-foreground mb-3">
-                      7 days exploring temples, rice terraces, and local culture
-                    </p>
-                    <div className="flex gap-2 mb-3">
-                      <div className="text-xs bg-primary/10 text-primary px-2 py-1 rounded">
-                        Culture
+                  {itineraries.map((itinerary) => (
+                    <div
+                      key={itinerary.id}
+                      className="destination-card p-4 border rounded-lg hover:shadow-md transition-shadow"
+                    >
+                      <div className="flex items-center justify-between mb-3">
+                        <h4 className="font-semibold">{itinerary.title}</h4>
+                        <div className="text-primary font-bold">
+                          {itinerary.price}
+                        </div>
                       </div>
-                      <div className="text-xs bg-accent/10 text-accent px-2 py-1 rounded">
-                        Adventure
+                      <p className="text-sm text-muted-foreground mb-3">
+                        {itinerary.duration} {itinerary.description}
+                      </p>
+                      <div className="flex gap-2 mb-3">
+                        {itinerary.tags.map((tag, index) => (
+                          <div
+                            key={index}
+                            className={`text-xs bg-${tag.color}/10 text-${tag.color} px-2 py-1 rounded`}
+                          >
+                            {tag.label}
+                          </div>
+                        ))}
                       </div>
-                    </div>
-                    <div className="text-xs text-muted-foreground">
-                      Perfect match for your preferences
-                    </div>
-                  </div>
-
-                  <div className="destination-card p-4">
-                    <div className="flex items-center justify-between mb-3">
-                      <h4 className="font-semibold">Japan Heritage Journey</h4>
-                      <div className="text-primary font-bold">$1,099</div>
-                    </div>
-                    <p className="text-sm text-muted-foreground mb-3">
-                      6 days discovering ancient temples and modern cities
-                    </p>
-                    <div className="flex gap-2 mb-3">
-                      <div className="text-xs bg-primary/10 text-primary px-2 py-1 rounded">
-                        Culture
-                      </div>
-                      <div className="text-xs bg-success/10 text-success px-2 py-1 rounded">
-                        History
+                      <div className="text-xs text-muted-foreground">
+                        {itinerary.match}
                       </div>
                     </div>
-                    <div className="text-xs text-muted-foreground">
-                      95% match for your interests
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -116,7 +215,7 @@ const Index = () => {
       </section>
 
       {/* Sample Itinerary */}
-      <ItineraryCards />
+      {/* <ItineraryCards /> */}
 
       {/* Trust Elements */}
       <TrustElements />

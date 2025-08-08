@@ -8,8 +8,8 @@ const lastMinuteDeals = [
     id: 1,
     destination: "Singapore",
     country: "Singapore",
-    price: "$899",
-    originalPrice: "$1,299",
+    price: "LKR 239,899",
+    originalPrice: "LKR 340,299",
     discount: "31% OFF",
     duration: "4 Days",
     departure: "Tomorrow",
@@ -23,8 +23,8 @@ const lastMinuteDeals = [
     id: 2,
     destination: "Dubai, UAE",
     country: "United Arab Emirates",
-    price: "$1,199",
-    originalPrice: "$1,699",
+    price: "LKR 271,000",
+    originalPrice: "LKR 381,699",
     discount: "29% OFF",
     duration: "5 Days",
     departure: "This Weekend",
@@ -38,8 +38,8 @@ const lastMinuteDeals = [
     id: 3,
     destination: "Kuala Lumpur",
     country: "Malaysia",
-    price: "$649",
-    originalPrice: "$899",
+    price: "LKR 326,100",
+    originalPrice: "LKR 452,899",
     discount: "28% OFF",
     duration: "3 Days",
     departure: "Next Week",
@@ -53,8 +53,8 @@ const lastMinuteDeals = [
     id: 4,
     destination: "Mauritius",
     country: "Mauritius",
-    price: "$1,599",
-    originalPrice: "$2,199",
+    price: "LKR 395,800",
+    originalPrice: "LKR 542,199",
     discount: "27% OFF",
     duration: "6 Days",
     departure: "This Friday",
@@ -68,8 +68,8 @@ const lastMinuteDeals = [
     id: 5,
     destination: "Thailand",
     country: "Thailand",
-    price: "$749",
-    originalPrice: "$1,099",
+    price: "LKR 295,867",
+    originalPrice: "LKR 435,099",
     discount: "32% OFF",
     duration: "5 Days",
     departure: "Next Monday",
@@ -86,7 +86,6 @@ const LastMinuteGetaways = () => {
     <section className="py-16 px-4 max-w-7xl mx-auto">
       <div className="text-center mb-12">
         <div className="flex items-center justify-center gap-2 mb-4">
-          <Zap className="h-6 w-6 text-warning" />
           <h2 className="text-3xl md:text-4xl font-bold">
             Last Minute Getaways
           </h2>
